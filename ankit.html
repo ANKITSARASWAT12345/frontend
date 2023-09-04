@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+        }
+        .container{
+            font-size: 10px;
+            width: 40em;
+            height: 40em;
+            position: relative;
+        }
+        .sun{
+            border-radius: 50%;
+            background-color: #F28C38;
+            height: 10em;
+            width: 10em;
+            top: 15em;
+            left: 15em;
+            box-shadow: 0 0 3em white;
+            position: absolute;
+        }
+        .earth,.moon{
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0em 0 0;
+            border-radius: 50%;
+        }
+        .earth{
+            height: 30em;
+            width: 30em;
+            top: 5em;
+            left: 5em;
+            animation: orbit 20s linear infinite;
+        }
+        .moon{
+            top: 2em;
+            left: 2em;
+            height: 10em;
+            width: 10em;
+            animation: orbit 20s linear infinite;
+        }
+        .earth::before,.moon::before{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .earth::before{
+            top: 2.8em;
+            right: 2.8em;
+            height: 3em;
+            width: 3em;
+            background-color: skyblue;
+        }
+        .moon::before{
+            top: 0.8em;
+            right: 0.2em;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: white;
+        }
+        @keyframes orbit{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <marquee behavior="scroll" scrollamount="20">
+        <div class="basic"></div>
+    </marquee> -->
+    <div class="container">
+        <div class="sun">
+
+        </div>
+        <div class="earth">
+            <div class="moon">
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
